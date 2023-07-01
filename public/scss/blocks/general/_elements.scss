@@ -1,0 +1,64 @@
+.button {
+	position: relative;
+
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 35px;
+	text-align:center;
+	text-decoration: none;
+	font-family: $font;
+	font-weight: 500;
+	font-size: 17px;
+	border: 0px;
+	border-radius: 0px;
+
+	cursor:pointer;
+	appearance: none;
+	outline: none;
+	transition: all linear 0.3s;
+	border-radius: 10px;
+
+	&-black {
+		background-color: $black_a;
+		color: $white;
+	}
+
+}
+
+.breadcrumbs {
+	margin: 10px 0 14px;
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		margin-right: 4px;
+		color: rgba(0, 0, 0, 0.5);
+		font-style: italic;
+		font-weight: 300;
+		font-size: 15px;
+
+		&:last-child {
+			a {
+				cursor: default;
+			}
+
+			&::before {
+				display: none;
+			}
+		}
+
+		&::before {
+			content: '/';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: -4px;
+			
+		}
+ 
+	}
+}

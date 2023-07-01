@@ -1,0 +1,262 @@
+
+.header {
+	position: relative;
+	z-index: 30;
+	background-color: $black_a;
+	color: $white;
+	font-weight: 500;
+	border-radius: 0px 0px 40px 0px;
+
+	@include maxw(1000px) {
+		border-radius: 0px;
+	}
+
+	.content {
+		position: static;
+		max-width: 1410px;
+	}
+
+	&__inline {
+		display: flex;
+		align-items: center;
+		padding: 18px 0 16px;
+		padding-left: 25px;
+
+		@include maxw(1000px) {
+			padding-left: 0;
+		}
+	}
+
+	.logo {
+		flex: 0 0 90px;
+		margin-right: auto;
+
+		@include maxw(1000px) {
+			flex: 0 0 70px;
+		}
+
+		@include maxw(420px) {
+			flex: 0 0 55px;
+		}
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+
+		@include maxw(800px) {
+			display: none;
+			position: absolute;
+			z-index: 30;
+			
+			right: 0;
+			top: 60px;
+			background-color: $black_a;
+			padding: 30px 20px 45px;
+		}
+
+		@include maxw(420px) {
+			width: 100%;
+		}
+	}
+
+	&__list {
+		display: flex;
+		margin-right: 42px;
+
+		@include maxw(1000px) {
+			margin-right: 25px;
+		}
+
+		@include maxw(800px) {
+			display: block;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__item {
+		margin-right: 42px;
+
+		@include maxw(1000px) {
+			margin-right: 25px;
+		}
+
+		@include maxw(800px) {
+			margin-right: 0;
+			margin-bottom: 25px;
+		}
+
+		&.header__active {
+			a {
+				&::before {
+					width: 31px;
+				}
+			}
+		}
+
+		a {
+			position: relative;
+			font-size: 20px;
+			font-weight: 500;
+
+			@include maxw(1000px) {
+				font-size: 16px;
+			}
+
+			&:hover::before {
+				width: 31px;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: -6px;
+				transform: translateX(-50%);
+				left: 50%;
+				width: 0;
+				height: 2px;
+				background-color: $blue;
+				transition: .3s all;
+			}
+ 
+		}
+	}
+
+	.search {
+		position: relative;
+		width: 345px;
+
+		@include maxw(1000px) {
+			width: 280px;
+		}
+
+		@include maxw(420px) {
+			width: 100%;
+		}
+
+		&__input {
+			input {
+				height: 40px;
+				border-radius: 15px;
+				padding-left: 51px;
+				font-size: 12px;
+				font-weight: 599;
+				color: $black_a;
+
+				&::placeholder {
+					color: $black_a;
+					opacity: 1;
+				}
+
+			}
+		}
+
+		&__btn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 24px;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	/* nav-icon-5 */
+	.nav-open {
+		flex-shrink: 0;
+	  width: 30px;
+	  height: 25px;
+	  margin-left: 25px;
+	  position: relative;
+	  cursor: pointer;
+	  display: none;
+
+	  @include maxw(800px) {
+			display: block;
+		}
+	}
+
+	.nav-open span {
+	  background-color:$white;
+	  position: absolute;
+	  border-radius: 2px;
+	  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+	  width:100%;
+	  height: 4px;
+	  transition-duration: 500ms
+	}
+
+	.nav-open span:nth-child(1) {
+	  top:0px;
+	  left: 0px;
+	}
+
+	.nav-open span:nth-child(2) {
+	  top:11px;
+	  left: 0px;
+	  opacity:1;
+	}
+
+	.nav-open span:nth-child(3) {
+	  bottom:0px;
+	  left: 0px;
+	}
+
+	.nav-open.open span:nth-child(1) {
+	  transform: rotate(45deg);
+	  top: 11px;
+	}
+
+	.nav-open.open span:nth-child(2) {
+	  opacity:0;
+	}
+
+	.nav-open.open span:nth-child(3) {
+	  transform: rotate(-45deg);
+	  top: 11px;
+	}
+
+}
+
+.account {
+	display: flex;
+	align-items: center;
+	margin-left: 21px;
+	padding-left: 21px;
+	border-left: 1px solid $white;
+
+	@include maxw(1000px) {
+		margin-left: 15px;
+		padding-left: 0;
+		border-left: none;
+	}
+
+	&__img {
+		flex-shrink: 0;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		margin-right: 18px;
+		border: 1px solid $white;
+		background-color: $gray;
+
+
+		@include maxw(420px) {
+			width: 30px;
+			height: 30px;
+			margin-right: 8px;
+		}
+	}
+
+	&__person {
+		
+		font-size: 15px;
+
+		@include maxw(420px) {
+			font-size: 13px;
+		}
+
+	}
+}

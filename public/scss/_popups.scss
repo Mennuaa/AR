@@ -1,0 +1,384 @@
+.blocker {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 100 !important;
+    padding: 80px 0 !important;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0, .2)  !important;
+    text-align: center;
+
+}
+
+.modal {
+    display: none;
+    vertical-align: middle;
+    position: relative !important;
+    z-index: 200 !important;
+    max-width: 636px !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    background: $white !important;
+    padding: 74px 62px 121px !important;
+    text-align: left !important;
+    color: $black_a;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 15px !important;
+    box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.25) !important;
+
+    @include maxw(640px) {
+    	width: 95% !important;
+		padding: 45px 20px !important;
+	}
+
+	 @include maxw(420px) {
+    	width: 95% !important;
+		padding: 45px 15px 40px !important;
+	}
+
+    & a.close-modal {
+	    position: absolute;
+	    top: 20px !important;
+	    right: 20px !important;
+	    display: block;
+	    text-indent: -9999px;
+	    background-size: contain;
+	    background-repeat: no-repeat;
+	    background-position: center center;
+	    background-image: url(../img/layout/general/close.svg) !important;
+	
+	     @include maxw(640px) {
+	    	 top: 10px !important;
+	    	right: 10px !important;
+		}
+	}
+}
+
+.order {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 44px;
+		width: 100%;
+
+		@include maxw(500px) {
+			flex-wrap: wrap;
+			margin-bottom: 25px;
+		}
+	}
+
+	&__main {
+		
+
+		@include maxw(500px) {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__section {
+		margin-right: 10px;
+
+		@include maxw(500px) {
+			width: 100%;
+			margin-bottom: 10px;
+			margin-right: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 10px;
+		font-weight: 300;
+		font-size: 12px;
+		color: rgba(11, 12, 16, 0.36);
+	}
+
+	&__person {
+		font-weight: 500;
+		font-size: 20px;
+
+		@include maxw(640px) {
+			font-size: 16px;
+		}
+	}
+
+	&__item {
+		margin-bottom: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+	.status {
+		margin-bottom: 15px;
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+		font-size: 14px;
+		width: 100%;
+
+		@include maxw(576px) {
+			flex-wrap: wrap;
+		}
+
+		&__inner {
+			position: relative;
+			flex: 0 0 264px;
+			margin-left: 10px;
+
+			@include maxw(576px) {
+				margin-left: 0;
+				margin-top: 10px;
+				flex: 0 1 100%;
+			}
+		}
+
+		&__head {
+			display: flex;
+			align-items: center;
+			height: 28px;
+			border: 1px solid $black;
+			border-radius: 5px;
+			cursor: pointer;
+
+			.status__item {
+				height: auto;
+
+				&:hover {
+					background-color: transparent;
+					color: $black_a;
+				}
+			}
+
+			img {
+				width: 25px;
+				margin-left: auto;
+			}
+		}
+
+		&__item {
+			position: relative;
+			display: flex;
+			align-items: center;
+			height: 34px;
+			padding-left: 34px;
+			font-weight: 500;
+			font-size: 14px;
+			border-bottom: 1px solid rgba(11, 12, 16, 0.22);
+		
+			&:hover {
+				color: $white;
+				background-color:  rgba(11, 12, 16, 0.83);
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 11px;
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+			}
+
+			&.status__confirm::before {
+				background-color:  rgba(88, 199, 223, 0.88);
+			}
+
+			&.status__unconfirm::before {
+				background-color:  rgba(160, 110, 15, 0.65);
+			}
+
+			&.status__cancel::before {
+				background-color:  rgba(160, 15, 15, 0.71);
+			}
+
+			&.status__done::before {
+				background-color:  rgba(0, 255, 25, 0.72);
+			}
+		}
+
+		&__list {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 34px;
+			width: 100%;
+			box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+			border-radius: 5px;
+			overflow: hidden;
+			background-color: $white;
+		}
+	}
+
+	&__img {
+		margin-bottom: 16px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 209px;
+		border: 1px solid #0B0C10;
+		border-radius: 15px;
+		width: 100%;
+
+		img {
+			width: auto;
+			max-width: 97%;
+			max-height: 97%;
+		}
+	}
+
+	&__inline {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 30px;
+		width: 100%;
+
+		@include maxw(420px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 20px;
+		margin-right: 10px;
+
+		@include maxw(480px) {
+			font-size: 16px;
+			
+		}
+
+		@include maxw(420px) {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__article {
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+		font-size: 14px;
+		color: $gray_b;
+
+		div {
+			margin-left: 5px;
+		}
+	}
+
+	.options {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 15px;
+		width: 100%;
+
+		@include maxw(420px) {
+			flex-wrap: wrap;
+		}
+
+		&__section {
+			margin-right: 10px;
+
+			@include maxw(420px) {
+				width: 100%;
+				margin-right:0;
+				margin-bottom: 20px;
+			}
+
+			&:last-child {
+				margin-right:0;
+			}
+		}
+
+		&__item {
+			display: flex;
+			align-content: center;
+			margin-bottom: 24px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__label {
+			min-width: 68px;
+			margin-right: 15px;
+			font-weight: 400;
+			font-size: 17px;
+			color: rgba(32, 40, 51, 0.81);
+		
+			@include maxw(480px) {
+				font-size: 14px;
+				margin-right: 10px;
+				min-width: 55px;
+			}
+		}
+
+		&__input {
+			width: 86px;
+
+			input {
+				height: 24px;
+				border:1px solid $black_a;
+				border-radius: 5px;
+				text-align: center;
+				font-size: 17px;
+
+				&::placeholder {
+					color: $black_a;
+				}
+
+			}
+		}
+	}
+
+	&__text {
+		width: 100%;
+		margin-bottom: 24px;
+		textarea {
+			border:1px solid $black_a;
+			border-radius: 15px;
+			padding: 13px 22px;
+			min-height: 140px;
+
+			&::placeholder {
+				color: rgba(32, 40, 51, 0.31);
+			}
+		}
+	}
+
+	&__btn {
+		align-self: flex-end;
+		width: 195px;
+		height: 35px;
+		border-radius: 30px;
+		background-color: $black_a;
+		color: $white;
+		font-weight: 500;
+		font-size: 17px;
+
+		@include maxw(420px) {
+			align-self: center;
+		}
+	}
+} 

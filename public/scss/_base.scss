@@ -1,0 +1,239 @@
+svg {
+	flex-shrink: 0;
+	display: block;
+	width: 0;
+	height: 0;
+	transition: .3s all;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	background: $white_a;
+	color: $black_a;
+	font-family:$font;
+	font-size: 16px;
+	font-weight: 400;
+	margin: 0 auto;
+	-webkit-text-size-adjust: 100%;
+}
+body {
+	font-size: 16px;
+}
+
+
+
+h1 {
+	
+}
+
+h2 {
+	
+}
+h3 {
+	
+}
+h4 {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.43;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	outline: none;
+	transition: .3s all;
+}
+
+ul {
+	list-style: none;
+
+	li {
+		position: relative;
+
+		&:last-child {
+			margin-bottom: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+ol {
+	margin: 0;
+
+	li {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+p {
+	line-height: 1.6;
+
+	
+}
+
+
+input,
+textarea {
+	display: inline-block;
+	width: 100%;
+	height: 60px;
+	padding: 0 20px;
+
+	background-color: $white;
+	color: $black_a;
+	border: 1px solid transparent;
+
+	font-family: $font;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: left;
+
+	border-radius: 10px;
+	box-sizing: border-box;
+
+	appearance: none;
+	resize: none;
+	outline:none;
+	transition: all linear 0.1s;
+
+	&::placeholder {
+		color: $gray;
+	}
+
+	&:focus {
+		background-color: $white;
+		border: 1px solid $white;
+	}
+}
+
+input:focus {
+	background-color: $white;
+}
+
+input::placeholder {
+	color: #A6AEB9;
+	opacity: 1;
+}
+
+input,
+textarea,
+select,
+input:active,
+textarea:active {
+    outline: none transparent !important;
+    box-shadow: none;
+   -webkit-appearance: none;
+  	 appearance: none;
+    -moz-outline: none !important;
+    font-family: $font;
+}	
+
+textarea {
+    overflow: auto;
+    min-height: 150px;
+	padding: 20px;
+}
+
+input[type=submit],
+button[type=submit],
+input[type=reset],
+button[type=reset],
+input[type=radio],
+input[type=checkbox]  {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+a:active, a:focus, div:active, div:focus, button:active, button:focus {
+	outline: 0!important;
+	outline-color: transparent!important;
+	outline-width: 0!important;
+	outline-style: none !important;
+	-webkit-tap-highlight-color: transparent !important;
+} 
+
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+	font-family: $font;
+}
+
+.inner {
+	width: 100%;
+	max-width: 1920px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.wrapper {
+	box-sizing: border-box;
+	min-height: 100%;
+}
+
+.footer {
+
+}
+
+.content {
+	width: 100%;
+	max-width: 1220px; 
+	margin: 0 auto;
+	padding: 0 15px;
+	position: relative; 
+	z-index: 5;
+}
+
+.img {
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	img {
+		display: block;
+		margin: auto;
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+	}
+}
+
+.bg {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+.page-link {
+	display: block;
+	padding: 10px 30px;
+	font-size: 18px;
+}
