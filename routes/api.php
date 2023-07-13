@@ -9,6 +9,7 @@ use App\Http\Controllers\API\FilmController;
 use App\Http\Controllers\API\RequestController;
 use App\Http\Controllers\API\StudiosEurogroupManagersController;
 use App\Http\Controllers\API\WishListController;
+use App\Http\Controllers\PusherAuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -95,3 +96,4 @@ Route::post('/send-message', [ChatController::class, 'sendMessage'])->name('api.
 Route::get('/chats', [ChatController::class, 'chats'])->middleware('auth:sanctum')->name('api.chats');
 Route::get('/chat/{id}', [ChatController::class, 'chat'])->middleware('auth:sanctum')->name('api.chat');
 
+Route::post('/pusher/auth', [PusherAuthController::class, 'authenticate']);
